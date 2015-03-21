@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Picxage</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="choose_image_btn">Choose Image</string>
+    <string name="reset_btn">Reset</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="set_image_btn_title">Set Image</string>
+</resources>
