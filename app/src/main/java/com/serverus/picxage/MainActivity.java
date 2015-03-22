@@ -5,6 +5,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
@@ -16,6 +22,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -24,6 +33,10 @@ public class MainActivity extends ActionBarActivity {
     private static final int SELECTED_PICTURE =1;
 
     ImageView imageView;
+
+    List<Drawable> listOfDrawable = new ArrayList<Drawable>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +102,13 @@ public class MainActivity extends ActionBarActivity {
 
                 // set the new image
                 imageView.setImageURI(uri);
+
+                // conver the image view to drawable then put it inside
+                // listOfDrawable which is a arrayList of drawable
+                listOfDrawable.add(imageView.getDrawable());
+
+                // log
+                L.m(listOfDrawable.get(0).toString());
             }
 
         }
